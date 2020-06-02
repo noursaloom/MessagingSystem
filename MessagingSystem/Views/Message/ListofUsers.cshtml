@@ -1,0 +1,24 @@
+﻿@model IEnumerable<POCO.User>
+
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <th>
+       @* @Html.CheckBoxFor(modelItem => item.)*@
+        @Html.CheckBox("ToUser", true)
+    </th>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+
+</tr>
+}
+
+</table>
